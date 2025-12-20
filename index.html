@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Legna Pizzeria – Pizza aus dem Holzofen</title>
+  <meta name="description" content="Holzofen-Pizza, frische Zutaten, gemütliches Ambiente. Reserviere jetzt deinen Tisch – La Legna Pizzeria." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="La Legna Pizzeria – Pizza aus dem Holzofen" />
+  <meta property="og:description" content="Holzofen-Pizza, frische Zutaten, gemütliches Ambiente. Reserviere jetzt deinen Tisch." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Legna Pizzeria",
+    "servesCuisine": ["Italian", "Pizza"],
+    "priceRange": "€€",
+    "telephone": "+49-000-000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Beispielstraße 1",
+      "addressLocality": "Mainz",
+      "postalCode": "55116",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Zum Inhalt springen</a>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="pill">🔥 Pizza aus dem Holzofen</span>
+        <span class="muted">Mainz Altstadt</span>
+      </div>
+
+      <div class="topbar__right">
+        <a class="topbar__phone" href="tel:+496131000000">📞 +49 6131 000000</a>
+        <a class="btn btn--small" href="#reservierung">Jetzt reservieren</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#">
+        <!-- Wenn du ein Logo hast: <img src="assets/logo.svg" alt="La Legna Pizzeria Logo" /> -->
+        <div class="brand__mark">🍕</div>
+        <div class="brand__text">
+          <div class="brand__name">La Legna</div>
+          <div class="brand__sub">Pizzeria • Holzofen</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          ☰ Menü
+        </button>
+
+        <ul class="nav__menu" id="navMenu">
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#speisekarte">Menü</a></li>
+          <li><a href="#reservierung">Reservierung</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1>Deine Holzofen-Pizzeria in Mainz.</h1>
+          <p class="lead">
+            Knuspriger Rand, saftige Tomaten, echter Mozzarella – bei uns landet jede Pizza
+            heiß aus dem Holzofen direkt auf deinem Tisch.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#speisekarte">Unsere Speisekarte</a>
+            <a class="btn btn--ghost" href="#reservierung">Tisch reservieren</a>
+          </div>
+
+          <div class="hero__meta">
+            <div class="meta-card">
+              <div class="meta-card__title">⏱️ Schnell & frisch</div>
+              <div class="meta-card__text">Teig mit langer Ruhezeit, täglich vorbereitet.</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-card__title">🌿 Veggie & vegan</div>
+              <div class="meta-card__text">Viele Optionen, gerne individuell.</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-card__title">💳 Kartenzahlung</div>
+              <div class="meta-card__text">Kontaktlos / Apple Pay möglich.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__media" aria-label="Pizza Bild">
+          <img
+            src="https://images.unsplash.com/photo-1548365328-8b8a4aefc1b1?auto=format&fit=crop&w=1200&q=80"
+            alt="Frische Pizza mit Basilikum aus dem Holzofen"
+            loading="eager"
+          />
+          <div class="hero__badge">
+            <span>⭐ 4.8</span>
+            <span class="muted">Google-Bewertungen</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Über uns -->
+    <section class="section" id="ueber-uns">
+      <div class="container grid grid--2">
+        <div>
+          <p class="eyebrow">ÜBER UNS</p>
+          <h2>Italienisches Handwerk. Mainz im Herzen.</h2>
+          <p>
+            Bei <strong>La Legna</strong> dreht sich alles um eine Sache: Pizza, die nach Italien schmeckt.
+            Unser Holzofen ist das Zentrum – sichtbar, spürbar, und der Grund, warum der Rand so perfekt knuspert.
+          </p>
+          <p>
+            Wir arbeiten mit frischen Zutaten, klaren Rezepten und einer Portion Experimentierfreude.
+            Du willst deine Pizza anders? Sag’s uns – wir machen’s möglich.
+          </p>
+
+          <ul class="checklist">
+            <li>Teig mit langer Fermentation für besseren Geschmack</li>
+            <li>San Marzano Style Tomatensauce & hochwertiger Käse</li>
+            <li>Gemütliches Ambiente – ideal für Date, Freunde, Familie</li>
+          </ul>
+
+          <div class="inline-cta">
+            <a class="btn btn--small" href="#reservierung">Jetzt Tisch sichern</a>
+            <a class="link" href="#kontakt">Oder anrufen</a>
+          </div>
+        </div>
+
+        <div class="stacked-images">
+          <img
+            src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=1200&q=80"
+            alt="Pizzabäcker am Ofen"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1601924638867-3ec9f56d3c1b?auto=format&fit=crop&w=1200&q=80"
+            alt="Pizza mit Rucola und Parmaschinken"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section section--alt" id="galerie">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">GALERIE</p>
+            <h2>Ein Blick auf unsere Klassiker</h2>
+            <p class="muted">Echte Bilder, echtes Essen – austauschbar durch deine eigenen Fotos.</p>
+          </div>
+          <a class="btn btn--ghost btn--small" href="#speisekarte">Zum Menü</a>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80" alt="Pizza Margherita" loading="lazy" />
+            <figcaption>Margherita</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1600628421066-f6bda6a7b976?auto=format&fit=crop&w=1200&q=80" alt="Pizza Salami" loading="lazy" />
+            <figcaption>Salami</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a2c?auto=format&fit=crop&w=1200&q=80" alt="Pizza mit Burrata" loading="lazy" />
+            <figcaption>Burrata Spezial</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc500f?auto=format&fit=crop&w=1200&q=80" alt="Tiramisu Dessert" loading="lazy" />
+            <figcaption>Tiramisu</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1626201850129-aec9c3f1bb0a?auto=format&fit=crop&w=1200&q=80" alt="Antipasti" loading="lazy" />
+            <figcaption>Antipasti</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&w=1200&q=80" alt="Pizza schneiden" loading="lazy" />
+            <figcaption>Frisch aus dem Ofen</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- USPs -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">WARUM WIR</p>
+            <h2>Kleine Details, die den Unterschied machen</h2>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature__icon">📶</div>
+            <div class="feature__title">Gratis WLAN</div>
+            <div class="feature__text">Perfekt für kurze Arbeit oder entspanntes Surfen.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">🐶</div>
+            <div class="feature__title">Hunde willkommen</div>
+            <div class="feature__text">Tierfreundlich – bring deinen Vierbeiner mit.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">♻️</div>
+            <div class="feature__title">Nachhaltig To-Go</div>
+            <div class="feature__text">Verpackungen möglichst recyclebar/biobasiert.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">👨‍👩‍👧‍👦</div>
+            <div class="feature__title">Familienfreundlich</div>
+            <div class="feature__text">Kinder sind bei uns gern gesehen.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">🥗</div>
+            <div class="feature__title">Veggie & Vegan</div>
+            <div class="feature__text">Viele Optionen – gerne auch individuell.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">💳</div>
+            <div class="feature__title">Kartenzahlung</div>
+            <div class="feature__text">Kontaktlos, Apple Pay & Co. möglich.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speisekarte -->
+    <section class="section section--alt" id="speisekarte">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">SPEISEKARTE</p>
+            <h2>Unsere Highlights</h2>
+            <p class="muted">
+              Hier sind Beispiel-Items. Du kannst später alles easy in <code>index.html</code> ändern
+              oder eine PDF-Speisekarte verlinken.
+            </p>
+          </div>
+
+          <div class="section__actions">
+            <a class="btn btn--small" href="#reservierung">Reservieren</a>
+            <a class="btn btn--ghost btn--small" href="assets/speisekarte.pdf" target="_blank" rel="noreferrer">
+              PDF öffnen
+            </a>
+          </div>
+        </div>
+
+        <div class="menu">
+          <div class="menu__col">
+            <h3>Pizza Rossa</h3>
+            <div class="menu__item">
+              <div class="menu__name">Margherita</div>
+              <div class="menu__price">9,50 €</div>
+              <div class="menu__desc">Tomate, Mozzarella, Basilikum</div>
+            </div>
+            <div class="menu__item">
+              <div class="menu__name">Salami</div>
+              <div class="menu__price">11,50 €</div>
+              <div class="menu__desc">Tomate, Mozzarella, Salami</div>
+            </div>
+            <div class="menu__item">
+              <div class="menu__name">Diavola</div>
+              <div class="menu__price">12,50 €</div>
+              <div class="menu__desc">Scharfe Salami, Chili-Honig (optional)</div>
+            </div>
+          </div>
+
+          <div class="menu__col">
+            <h3>Pizza Bianca</h3>
+            <div class="menu__item">
+              <div class="menu__name">Prosciutto & Rucola</div>
+              <div class="menu__price">13,50 €</div>
+              <div class="menu__desc">Creme, Mozzarella, Prosciutto, Rucola, Parmesan</div>
+            </div>
+            <div class="menu__item">
+              <div class="menu__name">Burrata Special</div>
+              <div class="menu__price">14,50 €</div>
+              <div class="menu__desc">Creme, Cherry-Tomaten, Burrata, Basilikum</div>
+            </div>
+            <div class="menu__item">
+              <div class="menu__name">Veggie</div>
+              <div class="menu__price">12,50 €</div>
+              <div class="menu__desc">Saisonales Gemüse, Olivenöl, Kräuter</div>
+            </div>
+          </div>
+
+          <div class="menu__col">
+            <h3>Salate & Antipasti</h3>
+            <div class="menu__item">
+              <div class="menu__name">Insalata Mista</div>
+              <div class="menu__price">7,50 €</div>
+              <div class="menu__desc">Gemischter Salat, Hausdressing</div>
+            </div>
+            <div class="menu__item">
+              <div class="menu__name">Caprese</div>
+              <div class="menu__price">9,50 €</div>
+              <div class="menu__desc">Tomate, Mozzarella, Basilikum</div>
+            </div>
+            <div class="menu__item">
+              <div class="menu__name">Antipasti Teller</div>
+              <div class="menu__price">12,50 €</div>
+              <div class="menu__desc">Auswahl je nach Tagesangebot</div>
+            </div>
+          </div>
+
+          <div class="menu__col">
+            <h3>Dessert</h3>
+            <div class="menu__item">
+              <div class="menu__name">Tiramisu</div>
+              <div class="menu__price">6,50 €</div>
+              <div class="menu__desc">Hausgemacht</div>
+            </div>
+            <div class="menu__item">
+              <div class="menu__name">Affogato</div>
+              <div class="menu__price">5,50 €</div>
+              <div class="menu__desc">Espresso & Vanilleeis</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservierung -->
+    <section class="section" id="reservierung">
+      <div class="container reserve">
+        <div class="reserve__text">
+          <p class="eyebrow">RESERVIERUNG</p>
+          <h2>Jetzt Tisch reservieren</h2>
+          <p class="muted">
+            Schnellster Weg: anrufen. Alternativ kannst du per Formular eine Anfrage senden.
+          </p>
+
+          <div class="reserve__cta">
+            <a class="btn" href="tel:+496131000000">📞 +49 6131 000000</a>
+            <a class="btn btn--ghost" href="#kontakt">Adresse & Karte</a>
+          </div>
+
+          <div class="hours">
+            <h3>Öffnungszeiten</h3>
+            <ul>
+              <li><span>Mo–Do</span><span>12:00–14:30 · 17:30–22:00</span></li>
+              <li><span>Fr–Sa</span><span>12:00–23:00</span></li>
+              <li><span>So</span><span>12:00–21:30</span></li>
+            </ul>
+            <p class="muted small">* Zeiten sind Beispielwerte – bitte anpassen.</p>
+          </div>
+        </div>
+
+        <form class="reserve__form" id="reserveForm">
+          <div class="form-row">
+            <label>
+              Name
+              <input required name="name" type="text" placeholder="Max Mustermann" />
+            </label>
+            <label>
+              Telefon
+              <input required name="phone" type="tel" placeholder="+49 ..." />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Datum
+              <input required name="date" type="date" />
+            </label>
+            <label>
+              Uhrzeit
+              <input required name="time" type="time" />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Personen
+              <input required name="people" type="number" min="1" max="20" value="2" />
+            </label>
+            <label>
+              Wunsch
+              <select name="wish">
+                <option value="innen">Innen</option>
+                <option value="aussen">Außen</option>
+                <option value="egal" selected>Egal</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Nachricht (optional)
+            <textarea name="message" rows="4" placeholder="Allergien, Kinderwagen, Geburtstag ..."></textarea>
+          </label>
+
+          <button class="btn" type="submit">Anfrage erstellen</button>
+          <p class="muted small">
+            Das Formular öffnet eine E-Mail – du kannst es später an ein echtes Reservierungssystem anbinden.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="section section--alt" id="kontakt">
+      <div class="container grid grid--2">
+        <div>
+          <p class="eyebrow">KONTAKT</p>
+          <h2>Besuche uns</h2>
+
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="contact-card__title">📍 Adresse</div>
+              <div class="contact-card__text">Beispielstraße 1, 55116 Mainz</div>
+              <a class="link" target="_blank" rel="noreferrer"
+                href="https://www.google.com/maps/search/?api=1&query=Mainz%2055116%20Beispielstra%C3%9Fe%201">
+                In Google Maps öffnen
+              </a>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card__title">☎️ Telefon</div>
+              <div class="contact-card__text"><a href="tel:+496131000000">+49 6131 000000</a></div>
+              <div class="contact-card__title" style="margin-top: 14px;">📷 Instagram</div>
+              <div class="contact-card__text"><a href="#" target="_blank" rel="noreferrer">@lalegna.pizzeria</a></div>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Tip:</strong> Wenn du mir deine echten Daten (Name, Adresse, Telefon, Öffnungszeiten, Menü) gibst,
+            kann ich dir alles final “production-ready” eintragen.
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe
+            title="Karte – La Legna Pizzeria"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Mainz%2055116&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__brand">La Legna Pizzeria</div>
+        <div class="muted small">© <span id="year"></span> · Holzofen-Pizza in Mainz</div>
+      </div>
+
+      <div class="footer__links">
+        <a class="link" href="#">Datenschutz</a>
+        <a class="link" href="#">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
