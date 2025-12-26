@@ -7,66 +7,6 @@
   <meta name="description" content="Il Forno a Legna – Holzofenpizza, Pasta & italienische Küche in der Mainzer Altstadt. Reserviere jetzt deinen Tisch! 📞 06131 2113838">
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
-
-  <style>
-    /* Hero mit Hintergrundbild + Overlay */
-    .hero {
-      position: relative;
-      background: url("img/IMG_7118.jpeg") center/cover no-repeat;
-      color: #fff;
-      padding: 6rem 1rem;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-
-    .hero p {
-      color: #eee;
-      font-size: 1.1rem;
-    }
-
-    .buttons {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .hero img.logo {
-      width: 160px;
-      height: auto;
-      display: block;
-      margin: 0 auto 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        padding: 4rem 1rem;
-      }
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -74,7 +14,7 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="logo">
-        <img src="img/IMG_7108.jpeg" alt="Il Forno a Legna Logo" style="height:48px; vertical-align:middle;">
+        <img src="img/IMG_7108.jpeg" alt="Il Forno a Legna Logo" style="height:48px;">
       </a>
       <nav id="mainNav" class="main-nav">
         <a href="index.html" class="active">Start</a>
@@ -88,11 +28,12 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Slider -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="img/IMG_7108.jpeg" alt="Il Forno a Legna Logo" class="logo">
-      <h1>Pizza aus dem Holzofen – mitten in Mainz.</h1>
+      <h1>Pizza aus dem Holzofen – mitten in Mainz</h1>
       <p>Frisch gebacken im Steinofen, mit regionalen Zutaten und echter italienischer Leidenschaft.<br>
       Besuche uns in der Klarastraße 2 oder reserviere telefonisch.</p>
       <div class="buttons">
@@ -102,36 +43,39 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- Über uns -->
   <section class="about">
     <div class="container">
       <h2>Über uns</h2>
       <p>
-        Willkommen bei <strong>Il Forno a Legna</strong> – deiner Holzofenpizzeria in der Mainzer Altstadt. 
-        Seit Jahren steht unser Ofen im Herzen des Restaurants für ehrliche, knusprige Pizza 
+        Willkommen bei <strong>Il Forno a Legna</strong> – deiner Holzofenpizzeria in der Mainzer Altstadt.
+        Seit Jahren steht unser Ofen im Herzen des Restaurants für ehrliche, knusprige Pizza
         und mediterrane Küche in gemütlicher Atmosphäre.
       </p>
-
-      <div class="highlights">
-        <div><strong>🔥 Echter Holzofen</strong><span>Tradition trifft Geschmack</span></div>
-        <div><strong>🥗 Frisch & saisonal</strong><span>Beste Zutaten aus der Region</span></div>
-        <div><strong>🍷 Italienisches Ambiente</strong><span>Modern & gemütlich</span></div>
-      </div>
     </div>
   </section>
 
-  <!-- Gallery Preview -->
-  <section class="gallery-preview">
+  <!-- Runde Bilder Sektion -->
+  <section class="round-gallery">
     <div class="container">
-      <h2>Ein Blick in unsere Pizzeria</h2>
-      <div class="gallery-grid">
-        <img src="img/2.png" alt="Pizza im Holzofen">
-        <img src="img/3.png" alt="Restaurant Innenraum">
-        <img src="img/4.png" alt="Frische Zutaten und Pizzateig">
-        <img src="img/8.png" alt="Il Forno a Legna Team">
-      </div>
-      <div class="center">
-        <a href="gallery.html" class="btn primary">Mehr Bilder ansehen</a>
+      <h2>Entdecke unser Restaurant</h2>
+      <div class="round-grid">
+        <div class="round-item">
+          <img src="img/pizza.jpg" alt="Pizza">
+          <span>PIZZA</span>
+        </div>
+        <div class="round-item">
+          <img src="img/pasta.jpg" alt="Pasta">
+          <span>PASTA</span>
+        </div>
+        <div class="round-item">
+          <img src="img/menu.jpg" alt="Menü">
+          <span>MENÜ</span>
+        </div>
+        <div class="round-item">
+          <img src="img/restaurant.jpg" alt="Anfahrt">
+          <span>ANFAHRT</span>
+        </div>
       </div>
     </div>
   </section>
