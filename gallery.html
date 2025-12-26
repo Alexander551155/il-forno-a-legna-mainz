@@ -1,1 +1,61 @@
-g
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie – Il Forno a Legna Mainz</title>
+  <meta name="description" content="Einblicke in unsere Holzofenpizzeria in Mainz – Pizza, Ambiente & Leidenschaft für italienische Küche.">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Il Forno a Legna</a>
+      <nav id="mainNav" class="main-nav">
+        <a href="index.html">Start</a>
+        <a href="menu.html">Speisekarte</a>
+        <a href="gallery.html" class="active">Galerie</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+      <button id="navToggle" class="nav-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="gallery-page">
+    <div class="container">
+      <h1>Galerie</h1>
+      <p>Ein kleiner Einblick in unsere Holzofenpizzeria – Atmosphäre, Genuss & italienische Lebensfreude.</p>
+
+      <div class="gallery-grid">
+        <img src="assets/gallery-1.jpg" alt="Pizza aus dem Holzofen" loading="lazy">
+        <img src="assets/gallery-2.jpg" alt="Innenraum der Pizzeria" loading="lazy">
+        <img src="assets/gallery-3.jpg" alt="Pizzateig frisch zubereitet" loading="lazy">
+        <img src="assets/gallery-4.jpg" alt="Team bei der Arbeit" loading="lazy">
+        <img src="assets/gallery-5.jpg" alt="Holzofen mit Flamme" loading="lazy">
+        <img src="assets/gallery-6.jpg" alt="Pasta und Wein" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Besuche uns in der Altstadt Mainz!</h2>
+      <p>Erlebe unsere Holzofenpizza live – reserviere gleich unter <a href="tel:+4961312113838">06131 2113838</a></p>
+      <a href="contact.html" class="btn primary">Kontakt & Route</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Il Forno a Legna – Mainz</p>
+      <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
+    </div>
+  </footer>
+</body>
+</html>
