@@ -1,135 +1,74 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Il Forno a Legna – Holzofen-Pizzeria in Mainz</title>
-  <meta name="description" content="Il Forno a Legna – deine moderne Holzofen-Pizzeria in Mainz. Frische Pizza, saisonale Zutaten, gemütliche Atmosphäre." />
-  <meta name="theme-color" content="#b22222" />
-
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="preload" as="image" href="./assets/hero.jpg" />
-
-  <!-- SEO & Strukturierte Daten -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Il Forno a Legna",
-    "image": "https://ilforno-mainz.de/assets/hero.jpg",
-    "telephone": "+49 6131 2113838",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Klarastraße 2",
-      "addressLocality": "Mainz",
-      "postalCode": "55116",
-      "addressCountry": "DE"
-    },
-    "servesCuisine": ["Pizza", "Italienisch"],
-    "url": "https://ilforno-mainz.de",
-    "priceRange": "€€"
-  }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Forno a Legna – Holzofen-Pizzeria Mainz</title>
+  <meta name="description" content="Il Forno a Legna – Holzofenpizza, Pasta & italienische Küche in der Mainzer Altstadt. Reserviere jetzt deinen Tisch! 📞 06131 2113838">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#top" class="logo">Il Forno a Legna</a>
-      <nav id="nav">
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#menu">Speisekarte</a>
-        <a href="#gallery">Galerie</a>
-        <a href="#kontakt">Kontakt</a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Il Forno a Legna</a>
+      <nav id="mainNav" class="main-nav">
+        <a href="index.html" class="active">Start</a>
+        <a href="menu.html">Speisekarte</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="contact.html">Kontakt</a>
       </nav>
-      <button id="burger" class="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <button id="navToggle" class="nav-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Pizza aus dem Holzofen, modern serviert.</h1>
-          <p>In der Mainzer Altstadt. Handgemacht, ehrlich & knusprig – so schmeckt Italien heute.</p>
-          <div class="hero-buttons">
-            <a href="tel:+4961312113838" class="btn primary">📞 06131 2113838</a>
-            <a href="#menu" class="btn">Speisekarte</a>
-          </div>
-        </div>
-        <div class="hero-img" role="img" aria-label="Pizza aus Holzofen"></div>
-      </div>
-    </section>
-
-    <section id="ueber-uns" class="section">
-      <div class="container">
-        <h2>Über uns</h2>
-        <p>Il Forno a Legna steht für authentische Holzofenpizza mit modernem Touch. Wir backen mit Leidenschaft, regionalen Zutaten und einem Lächeln.</p>
-        <div class="features">
-          <div><strong>🔥 Holzofen</strong><span>Echter Geschmack</span></div>
-          <div><strong>🥗 Frisch & saisonal</strong><span>Immer neu inspiriert</span></div>
-          <div><strong>🍷 Ambiente</strong><span>Modern – gemütlich</span></div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Pizza aus dem Holzofen – mitten in Mainz.</h1>
+        <p>Frisch gebacken im Steinofen, mit regionalen Zutaten und echter italienischer Leidenschaft. Besuche uns in der Klarastraße 2 oder reserviere telefonisch.</p>
+        <div class="buttons">
+          <a href="menu.html" class="btn primary">Speisekarte ansehen</a>
+          <a href="tel:+4961312113838" class="btn">📞 Jetzt anrufen</a>
         </div>
       </div>
-    </section>
-
-    <section id="menu" class="section alt">
-      <div class="container">
-        <h2>Speisekarte</h2>
-        <p>Unsere Klassiker und saisonale Kreationen – immer mit Liebe zubereitet.</p>
-        <div class="menu-gallery">
-          <img src="./assets/Menu_1.png" alt="Speisekarte 1" loading="lazy" />
-          <img src="./assets/Menu_2.png" alt="Speisekarte 2" loading="lazy" />
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section">
-      <div class="container">
-        <h2>Galerie</h2>
-        <div class="gallery-grid">
-          <img src="./assets/2.png" alt="Pizza" loading="lazy" />
-          <img src="./assets/3.png" alt="Restaurant Innenraum" loading="lazy" />
-          <img src="./assets/4.png" alt="Ofen" loading="lazy" />
-          <img src="./assets/5.png" alt="Team" loading="lazy" />
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt" class="section alt">
-      <div class="container contact-grid">
-        <div>
-          <h2>Kontakt</h2>
-          <p>Reserviere telefonisch oder komm spontan vorbei.</p>
-          <ul class="contact-list">
-            <li><strong>📞 Telefon:</strong> <a href="tel:+4961312113838">06131 2113838</a></li>
-            <li><strong>📍 Adresse:</strong> Klarastraße 2, 55116 Mainz</li>
-            <li><strong>⏰ Öffnungszeiten:</strong> täglich 12 – 22 Uhr</li>
-          </ul>
-          <div class="hero-buttons">
-            <a href="tel:+4961312113838" class="btn primary">Jetzt anrufen</a>
-            <a href="https://maps.app.goo.gl/4HTRiewYZNhDqkMj9" class="btn" target="_blank">Route</a>
-          </div>
-        </div>
-        <div class="map">
-          <a href="https://maps.app.goo.gl/4HTRiewYZNhDqkMj9" target="_blank" rel="noopener">
-            <img src="./assets/map-placeholder.png" alt="Karte Mainz" loading="lazy" />
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Il Forno a Legna – Mainz</span>
-      <div class="footer-links">
-        <a href="#">Datenschutz</a>
-        <a href="#">Impressum</a>
+      <div class="hero-image">
+        <img src="assets/hero.jpg" alt="Pizza aus dem Holzofen in Mainz">
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="./script.js"></script>
+  <!-- About -->
+  <section class="about">
+    <div class="container">
+      <h2>Über uns</h2>
+      <p>Willkommen bei <strong>Il Forno a Legna</strong> – deiner Holzofenpizzeria in der Mainzer Altstadt. Seit Jahren steht unser Ofen im Herzen des Restaurants für ehrliche, knusprige Pizza und mediterrane Küche in gemütlicher Atmosphäre.</p>
+      <div class="highlights">
+        <div><strong>🔥 Echter Holzofen</strong><span>Tradition trifft Geschmack</span></div>
+        <div><strong>🥗 Frisch & saisonal</strong><span>Beste Zutaten aus der Region</span></div>
+        <div><strong>🍷 Italienisches Ambiente</strong><span>Modern & gemütlich</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Reserviere jetzt deinen Tisch!</h2>
+      <p>Am schnellsten geht’s telefonisch unter <a href="tel:+4961312113838">06131 2113838</a></p>
+      <a href="contact.html" class="btn primary">Kontakt & Anfahrt</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Il Forno a Legna – Klarastraße 2, 55116 Mainz</p>
+      <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
+    </div>
+  </footer>
 </body>
 </html>
