@@ -1,104 +1,756 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il Forno a Legna – Holzofen-Pizzeria Mainz</title>
-  <meta name="description" content="Il Forno a Legna – Holzofenpizza, Pasta & italienische Küche in der Mainzer Altstadt. Reserviere jetzt deinen Tisch! 📞 06131 2113838">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Il Forno a Legna – Deine Holzofen-Pizzeria in Mainz</title>
+    <meta
+      name="description"
+      content="Genieße original italienische Pizza aus dem Holzofen im Herzen der Mainzer Altstadt. Frisch, traditionell und mit Liebe gebacken – bei Il Forno a Legna."
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Space+Grotesk:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fff6ec;
+        --bg-deep: #f3dfc5;
+        --ink: #1b1512;
+        --accent: #7e182a;
+        --accent-soft: #c0624f;
+        --muted: #6b5f57;
+        --card: #fffaf4;
+        --shadow: 0 20px 60px rgba(23, 16, 12, 0.18);
+        --radius: 22px;
+      }
 
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <img src="img/IMG_7108.jpeg" alt="Il Forno a Legna Logo" />
-      </a>
-      <nav id="mainNav" class="main-nav">
-        <a href="index.html" class="active">Start</a>
-        <a href="menu.html">Speisekarte</a>
-        <a href="gallery.html">Galerie</a>
-        <a href="contact.html">Kontakt</a>
-      </nav>
-      <button id="navToggle" class="nav-toggle" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+      * {
+        box-sizing: border-box;
+      }
 
-  <!-- HERO SLIDER -->
-  <section class="hero">
-    <div class="hero-slider">
-      <div class="slide active" style="background-image: url('img/IMG_7109.jpeg');"></div>
-      <div class="slide" style="background-image: url('img/IMG_7113.jpeg');"></div>
-      <div class="slide" style="background-image: url('img/IMG_7118.jpeg');"></div>
-    </div>
-    <div class="hero-content">
-      <h1>Italienische Leidenschaft – frisch aus dem Holzofen</h1>
-      <p>Genieße authentische Pizza, hausgemachte Pasta und den Geschmack Italiens – mitten in der Mainzer Altstadt.</p>
-      <div class="buttons">
-        <a href="menu.html" class="btn primary">Speisekarte ansehen</a>
-        <a href="tel:+4961312113838" class="btn secondary">📞 Jetzt reservieren</a>
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at 20% 0%, #fff3e2, transparent 48%),
+          radial-gradient(circle at 80% 15%, #fde3c8, transparent 52%),
+          linear-gradient(180deg, var(--bg) 0%, #fff 40%, var(--bg-deep) 100%);
+        min-height: 100vh;
+        scroll-behavior: smooth;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 246, 236, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(27, 21, 18, 0.08);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+      }
+
+      .brand {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .brand span {
+        font-family: "Cormorant Garamond", "Georgia", serif;
+        font-size: 1.6rem;
+        letter-spacing: 0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        font-size: 0.98rem;
+      }
+
+      .nav-links a {
+        position: relative;
+        padding-bottom: 4px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        width: 100%;
+      }
+
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: 0;
+        padding: 8px;
+      }
+
+      .nav-toggle span {
+        display: block;
+        width: 26px;
+        height: 2px;
+        margin: 6px 0;
+        background: var(--ink);
+      }
+
+      .hero {
+        position: relative;
+        padding: 110px 0 90px;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          110deg,
+          rgba(10, 7, 6, 0.75) 0%,
+          rgba(10, 7, 6, 0.45) 45%,
+          rgba(10, 7, 6, 0.2) 100%
+        );
+        z-index: 1;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transform: scale(1.05);
+        animation: heroSlide 18s infinite;
+      }
+
+      .hero-slide:nth-child(1) {
+        animation-delay: 0s;
+        background-image: url("img/IMG_7113.jpeg");
+      }
+
+      .hero-slide:nth-child(2) {
+        animation-delay: 6s;
+        background-image: url("img/IMG_7125.jpeg");
+      }
+
+      .hero-slide:nth-child(3) {
+        animation-delay: 12s;
+        background-image: url("img/IMG_7109.jpeg");
+      }
+
+      @keyframes heroSlide {
+        0% {
+          opacity: 0;
+          transform: scale(1.08);
+        }
+        8% {
+          opacity: 1;
+        }
+        33% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        41% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.08);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        display: grid;
+        gap: 22px;
+        max-width: 620px;
+        padding: 26px 28px;
+        border-radius: 20px;
+        background: rgba(12, 10, 9, 0.55);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
+      }
+
+      .hero h1 {
+        font-family: "Cormorant Garamond", "Georgia", serif;
+        font-size: clamp(2.8rem, 5vw, 4.6rem);
+        margin: 0;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .btn {
+        border: 1px solid transparent;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(126, 24, 42, 0.4);
+      }
+
+      .btn.secondary {
+        border-color: rgba(255, 255, 255, 0.8);
+        color: #fff;
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .section h2 {
+        font-family: "Cormorant Garamond", "Georgia", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 20px;
+      }
+
+      .section p {
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .about-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        padding: 24px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 1.2rem;
+        color: var(--ink);
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        align-items: stretch;
+      }
+
+      .menu-item img {
+        border-radius: 18px;
+        margin-bottom: 16px;
+      }
+
+      .menu-gallery {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        margin-top: 18px;
+      }
+
+      .menu-thumb {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        background: #cfc8bf;
+        padding: 14px;
+        aspect-ratio: 4 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-thumb__frame {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+      }
+
+      .menu-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .menu-thumb span {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        background: rgba(27, 21, 18, 0.78);
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+      }
+
+      .menu-thumb:hover,
+      .menu-thumb:focus-visible {
+        transform: translateY(-4px);
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 10, 8, 0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        z-index: 50;
+      }
+
+      .modal.open {
+        display: flex;
+      }
+
+      .modal-content {
+        max-width: min(900px, 92vw);
+        max-height: 86vh;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #fff;
+        position: relative;
+      }
+
+      .modal-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(27, 21, 18, 0.85);
+        color: #fff;
+        border: 0;
+        border-radius: 999px;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .menu-note {
+        margin-top: 28px;
+        padding: 20px 24px;
+        border-radius: 18px;
+        border: 1px solid rgba(126, 24, 42, 0.2);
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .gallery-grid img {
+        border-radius: 20px;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .contact {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        align-items: center;
+      }
+
+      .contact-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card h3 {
+        margin-top: 0;
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .portrait {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .legal h3 {
+        margin-top: 30px;
+      }
+
+      .legal ul {
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .footer {
+        padding: 30px 0 50px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .footer a {
+        color: var(--accent);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          right: 4vw;
+          background: rgba(255, 255, 255, 0.96);
+          border-radius: 16px;
+          padding: 18px;
+          flex-direction: column;
+          gap: 12px;
+          box-shadow: var(--shadow);
+          display: none;
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#hero">
+          <img src="img/IMG_7108.jpeg" alt="Il Forno a Legna Logo" />
+          <span>Il Forno a Legna</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+          <a href="#about">Über uns</a>
+          <a href="#menu">Menü & Speisekarte</a>
+          <a href="#gallery">Galerie</a>
+          <a href="#contact">Reservierung & Kontakt</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-slide"></div>
+          <div class="hero-slide"></div>
+          <div class="hero-slide"></div>
+        </div>
+        <div class="container hero-content reveal">
+          <h1>Il Forno a Legna</h1>
+          <p>Deine Holzofen-Pizzeria in Mainz.</p>
+          <p>
+            Genieße original italienische Pizza aus dem Holzofen im Herzen der Mainzer Altstadt.
+            Frisch, traditionell und mit Liebe gebacken – bei Il Forno a Legna.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#menu">Unsere Speisekarte</a>
+            <a class="btn secondary" href="tel:+4961312113838">Jetzt reservieren: 06131 2113838</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container reveal">
+          <h2>Herzlich willkommen bei Il Forno a Legna</h2>
+          <p>
+            Herzlich willkommen bei Il Forno a Legna, deiner neuen Holzofen-Pizzeria mitten in der
+            historischen Altstadt von Mainz!
+          </p>
+          <div class="grid about-grid">
+            <div class="card">
+              <h3>Unser Holzofen als Herzstück</h3>
+              <p>
+                In einem Gebäude, in dem lange Zeit die Metzgerei Schmidt zuhause war, hat Gastronom
+                Denis Feraizi im Februar 2025 sein Traumprojekt verwirklicht. Der Holzofen, das Herz
+                des Lokals, steht zentral im Gastraum – vor Ort gebacken, mit natürlichem Geschmack
+                und italienischer Tradition verbunden.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Authentische Pizza wie in Italien</h3>
+              <p>
+                Wir starten mit einer Auswahl von zehn klassischen Tomaten- und vegetarischen
+                Pizzen sowie frischen Salaten. Jede Pizza wird auf Wunsch individuell
+                zusammengestellt. Mit der Zeit ergänzen wir die Karte um saisonale Spezialitäten,
+                Antipasti und wechselnde Tages- und Wochenangebote.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Detailliebe im Design</h3>
+              <p>
+                Fichtenholz dominiert unser Interieur – schlicht, natürlich und modern. Wir haben
+                bewusst auf kühle Eleganz verzichtet zugunsten einer gemütlichen Atmosphäre, die
+                genauso zum Verweilen einlädt wie unser Holzofen. Um die Nachbarschaft zu schonen,
+                betreiben wir zudem eine spezielle Rauchgaswaschanlage.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Unsere Philosophie</h3>
+              <p>
+                Bei Il Forno a Legna steht die Küche im Vordergrund – authentisch, frisch und mit
+                klarer Handschrift. Denis Feraizi experimentiert mit neuen Pizzakreationen und
+                perfektioniert ständig Rezepte. Wir legen Wert auf Qualität, fair kalkulierte
+                Preise und ehrliches Handwerk.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="menu">
+        <div class="container reveal">
+          <h2>Menü & Speisekarte</h2>
+          <p>Klicke auf die Speisekarte, um sie groß zu sehen.</p>
+          <div class="menu-gallery">
+            <button class="menu-thumb" type="button" data-modal-image="img/Menu1.jpeg">
+              <div class="menu-thumb__frame">
+                <img src="img/Menu1.jpeg" alt="Speisekarte Seite 1" />
+              </div>
+              <span>Menu 1</span>
+            </button>
+            <button class="menu-thumb" type="button" data-modal-image="img/Menu2.jpeg">
+              <div class="menu-thumb__frame">
+                <img src="img/Menu2.jpeg" alt="Speisekarte Seite 2" />
+              </div>
+              <span>Menu 2</span>
+            </button>
+            <button class="menu-thumb" type="button" data-modal-image="img/Menu3.jpeg">
+              <div class="menu-thumb__frame">
+                <img src="img/Menu3.jpeg" alt="Speisekarte Seite 3" />
+              </div>
+              <span>Menu 3</span>
+            </button>
+          </div>
+          <div class="menu-note">
+            <strong>Hinweis:</strong> Jede Pizza wird auf Wunsch individuell zusammengestellt. Mit
+            der Zeit ergänzen wir die Karte um saisonale Spezialitäten, Antipasti und wechselnde
+            Tages- und Wochenangebote.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container reveal">
+          <h2>Galerie</h2>
+          <div class="grid gallery-grid">
+            <img src="img/IMG_7112.jpeg" alt="Gastraum und Holzofen" />
+            <img src="img/IMG_7113.jpeg" alt="Frische Pizza aus dem Holzofen" />
+            <img src="img/IMG_7118.jpeg" alt="Gemütliches Ambiente im Restaurant" />
+            <img src="img/IMG_7125.jpeg" alt="Innenraum mit warmem Licht" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact reveal">
+          <div>
+            <h2>Reservierung & Kontakt</h2>
+            <p>Genieße die Zeit in unserem Restaurant mit deinen Lieben.</p>
+            <div class="contact-card">
+              <h3>Il Forno a Legna Pizzeria</h3>
+              <ul class="contact-list">
+                <li><strong>Adresse:</strong> Klarastraße 2, 55116 Mainz</li>
+                <li><strong>Telefon:</strong> <a href="tel:+4961312113838">+49 6131 2113838</a></li>
+                <li><strong>Inhaber:</strong> Denis Feraizi</li>
+              </ul>
+              <div class="cta-row" style="margin-top: 18px;">
+                <a class="btn primary" href="tel:+4961312113838">Jetzt anrufen</a>
+                <a class="btn secondary" href="#menu">Speisekarte ansehen</a>
+              </div>
+            </div>
+          </div>
+          <div class="portrait">
+            <img src="Denis_foto.jpg" alt="Denis Feraizi im Restaurant" />
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Il Forno a Legna · Klarastraße 2, 55116 Mainz · Kontakt: 06131 2113838</p>
+        <p><a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></p>
+      </div>
+    </footer>
+
+    <div class="modal" id="menuModal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" type="button" id="menuModalClose">Schließen</button>
+        <img src="" alt="Speisekarte" id="menuModalImage" />
       </div>
     </div>
-  </section>
 
-  <!-- ÜBER UNS -->
-  <section class="about">
-    <div class="container">
-      <h2>Willkommen bei Il Forno a Legna</h2>
-      <p>
-        Seit vielen Jahren ist unser Holzofen das Herzstück unseres Restaurants.  
-        Bei uns erwarten dich knusprige Steinofenpizzen, frische Pasta und erlesene Weine in einem stilvollen, gemütlichen Ambiente.  
-        Wir verbinden traditionelle Rezepte mit moderner Leidenschaft – für den unverwechselbaren Geschmack Italiens.
-      </p>
-    </div>
-  </section>
+    <script>
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
 
-  <!-- RUNDE SPEZIALITÄTEN-BILDER -->
-  <section class="round-gallery">
-    <div class="container">
-      <h2>Unsere Spezialitäten</h2>
-      <div class="round-grid">
-        <div class="round-item">
-          <img src="img/2.png" alt="Pizza">
-          <span>Pizza</span>
-        </div>
-        <div class="round-item">
-          <img src="img/5.png" alt="Pasta">
-          <span>Pasta</span>
-        </div>
-        <div class="round-item">
-          <img src="img/7.png" alt="Menü">
-          <span>Menü</span>
-        </div>
-        <div class="round-item">
-          <img src="img/IMG_7125.jpeg" alt="Ambiente">
-          <span>Ambiente</span>
-        </div>
-      </div>
-    </div>
-  </section>
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
 
-  <!-- CTA (RESERVIERUNG) -->
-  <section class="cta">
-    <div class="container">
-      <h2>Buon Appetito!</h2>
-      <p>Reserviere deinen Tisch unter <a href="tel:+4961312113838">06131 2113838</a>  
-      oder besuche uns direkt in der Klarastraße 2, Mainz.</p>
-      <a href="contact.html" class="btn primary">Jetzt Kontakt aufnehmen</a>
-    </div>
-  </section>
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => navLinks.classList.remove("open"));
+      });
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Il Forno a Legna – Klarastraße 2, 55116 Mainz</p>
-      <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
-    </div>
-  </footer>
-</body>
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+
+      const menuModal = document.getElementById("menuModal");
+      const menuModalImage = document.getElementById("menuModalImage");
+      const menuModalClose = document.getElementById("menuModalClose");
+
+      document.querySelectorAll(".menu-thumb").forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          menuModalImage.src = thumb.getAttribute("data-modal-image");
+          menuModal.classList.add("open");
+          menuModal.setAttribute("aria-hidden", "false");
+        });
+      });
+
+      const closeMenuModal = () => {
+        menuModal.classList.remove("open");
+        menuModal.setAttribute("aria-hidden", "true");
+        menuModalImage.src = "";
+      };
+
+      menuModalClose.addEventListener("click", closeMenuModal);
+      menuModal.addEventListener("click", (event) => {
+        if (event.target === menuModal) {
+          closeMenuModal();
+        }
+      });
+    </script>
+  </body>
 </html>
