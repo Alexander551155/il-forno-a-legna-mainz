@@ -283,9 +283,9 @@
       .open-pill {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         font-size: 0.72rem;
-        padding: 4px 10px;
+        padding: 6px;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.12);
         border: 1px solid rgba(255, 255, 255, 0.35);
@@ -296,8 +296,8 @@
       }
 
       .open-dot {
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: #7bff9c;
         box-shadow: 0 0 12px rgba(123, 255, 156, 0.6);
@@ -306,6 +306,13 @@
       .open-dot.closed {
         background: #ff9a9a;
         box-shadow: 0 0 12px rgba(255, 154, 154, 0.6);
+      }
+
+      .open-note {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.9);
+        display: none;
+        text-shadow: 0 0 10px rgba(255, 210, 180, 0.7);
       }
 
       .cta-row {
@@ -542,7 +549,34 @@
         padding: 12px 14px;
         border-radius: 14px;
         font-size: 0.9rem;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .mark {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        border: 1px solid rgba(27, 21, 18, 0.55);
+        flex: 0 0 auto;
+      }
+
+      .mark-dot {
+        border-radius: 50%;
+      }
+
+      .mark-square {
+        border-radius: 2px;
+      }
+
+      .mark-diamond {
+        transform: rotate(45deg);
+      }
+
+      .mark-ring {
+        border-radius: 50%;
+        border-width: 2px;
       }
 
       .signature-grid {
@@ -695,6 +729,12 @@
         .nav-cta {
           display: none;
         }
+
+        .open-pill {
+          top: auto;
+          bottom: 10px;
+          right: 10px;
+        }
       }
     </style>
   </head>
@@ -732,7 +772,7 @@
           <h1>Il Forno a Legna</h1>
           <div class="open-pill" id="openStatus">
             <span class="open-dot" id="openDot"></span>
-            <span id="openText">Heute geöffnet</span>
+            <span class="open-note" id="openNote">Öffnet morgen um 12:00</span>
           </div>
           <p class="hero-subtitle">Deine Holzofen-Pizzeria in Mainz.</p>
           <p class="hero-text">
@@ -746,13 +786,26 @@
         </div>
       </section>
 
-      <section class="section" id="highlights">
+      <section class="section" id="signature">
         <div class="container reveal">
-          <div class="highlights">
-            <div class="highlight-item">🔥 Holzofen im Gastraum</div>
-            <div class="highlight-item">🍅 Frische Zutaten</div>
-            <div class="highlight-item">📍 Mitten in der Altstadt</div>
-            <div class="highlight-item">🍷 Gemütliches Ambiente</div>
+          <h2>Unsere Signatures</h2>
+          <div class="signature-grid">
+            <div class="card signature-card">
+              <img src="img/IMG_7113.jpeg" alt="Pizza aus dem Holzofen" />
+              <h3>Holzofen‑Klassiker</h3>
+              <p>
+                Knuspriger Boden, sanfte Röstaromen und frische Zutaten – genau so, wie Pizza in
+                Italien schmecken soll.
+              </p>
+            </div>
+            <div class="card signature-card">
+              <img src="img/IMG_7125.jpeg" alt="Warmer Innenraum" />
+              <h3>Altstadt‑Atmosphäre</h3>
+              <p>
+                Warme Farben, Fichtenholz und der Duft aus dem Ofen – perfekt für gemütliche Abende
+                mit Familie und Freunden.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -799,30 +852,6 @@
                 klarer Handschrift. Denis Feraizi experimentiert mit neuen Pizzakreationen und
                 perfektioniert ständig Rezepte. Wir legen Wert auf Qualität, fair kalkulierte
                 Preise und ehrliches Handwerk.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="signature">
-        <div class="container reveal">
-          <h2>Unsere Signatures</h2>
-          <div class="signature-grid">
-            <div class="card signature-card">
-              <img src="img/IMG_7113.jpeg" alt="Pizza aus dem Holzofen" />
-              <h3>Holzofen‑Klassiker</h3>
-              <p>
-                Knuspriger Boden, sanfte Röstaromen und frische Zutaten – genau so, wie Pizza in
-                Italien schmecken soll.
-              </p>
-            </div>
-            <div class="card signature-card">
-              <img src="img/IMG_7125.jpeg" alt="Warmer Innenraum" />
-              <h3>Altstadt‑Atmosphäre</h3>
-              <p>
-                Warme Farben, Fichtenholz und der Duft aus dem Ofen – perfekt für gemütliche Abende
-                mit Familie und Freunden.
               </p>
             </div>
           </div>
@@ -933,6 +962,17 @@
         </div>
       </section>
 
+      <section class="section" id="highlights">
+        <div class="container reveal">
+          <div class="highlights">
+            <div class="highlight-item"><span class="mark mark-dot"></span>Holzofen im Gastraum</div>
+            <div class="highlight-item"><span class="mark mark-square"></span>Frische Zutaten</div>
+            <div class="highlight-item"><span class="mark mark-diamond"></span>Mitten in der Altstadt</div>
+            <div class="highlight-item"><span class="mark mark-ring"></span>Gemütliches Ambiente</div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="footer">
@@ -1003,16 +1043,16 @@
 
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      const openText = document.getElementById("openText");
       const openDot = document.getElementById("openDot");
+      const openNote = document.getElementById("openNote");
       const now = new Date();
       const day = now.getDay();
       const hour = now.getHours();
       const isOpen = day !== 0 && hour >= 12 && hour < 22;
 
-      openText.textContent = isOpen ? "Heute geöffnet · 12:00–22:00" : "Heute geschlossen";
       if (!isOpen) {
         openDot.classList.add("closed");
+        openNote.style.display = "block";
       }
 
       const galleryTrack = document.getElementById("galleryTrack");
