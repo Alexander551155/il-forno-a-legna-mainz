@@ -309,10 +309,15 @@
       }
 
       .open-note {
-        font-size: 0.58rem;
-        color: rgba(255, 255, 255, 0.9);
-        display: none;
-        text-shadow: 0 0 10px rgba(255, 210, 180, 0.7);
+        font-size: 0.6rem;
+        color: #8dffb6;
+        display: inline-flex;
+        text-shadow: 0 0 10px rgba(86, 220, 140, 0.6);
+      }
+
+      .open-note.closed {
+        color: #ffb0b0;
+        text-shadow: 0 0 10px rgba(255, 154, 154, 0.6);
       }
 
       .cta-row {
@@ -554,6 +559,43 @@
         gap: 10px;
       }
 
+      .highlight-window {
+        width: min(360px, 86vw);
+        margin: 0 auto;
+        padding: 14px 18px;
+        border-radius: 18px;
+        background: rgba(255, 250, 244, 0.9);
+        border: 1px solid rgba(27, 21, 18, 0.08);
+        box-shadow: 0 16px 32px rgba(27, 21, 18, 0.12);
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .highlight-text {
+        display: block;
+        font-weight: 600;
+        color: var(--ink);
+        animation: highlightFade 3.6s ease-in-out infinite;
+      }
+
+      @keyframes highlightFade {
+        0%,
+        15% {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        30%,
+        70% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        85%,
+        100% {
+          opacity: 0;
+          transform: translateY(-6px);
+        }
+      }
+
       .mark {
         width: 14px;
         height: 14px;
@@ -775,7 +817,7 @@
           <h1>Il Forno a Legna</h1>
           <div class="open-pill" id="openStatus">
             <span class="open-dot" id="openDot"></span>
-            <span class="open-note" id="openNote">Öffnet morgen um 12:00</span>
+            <span class="open-note" id="openNote">Geöffnet</span>
           </div>
           <p class="hero-subtitle">Deine Holzofen-Pizzeria in Mainz.</p>
           <p class="hero-text">
@@ -967,11 +1009,8 @@
 
       <section class="section" id="highlights">
         <div class="container reveal">
-          <div class="highlights">
-            <div class="highlight-item"><span class="mark mark-dot"></span>Holzofen im Gastraum</div>
-            <div class="highlight-item"><span class="mark mark-square"></span>Frische Zutaten</div>
-            <div class="highlight-item"><span class="mark mark-diamond"></span>Mitten in der Altstadt</div>
-            <div class="highlight-item"><span class="mark mark-ring"></span>Gemütliches Ambiente</div>
+          <div class="highlight-window" aria-live="polite">
+            <span class="highlight-text" id="highlightText">Öffnungszeiten: Mo–Sa 12:00–22:00</span>
           </div>
         </div>
       </section>
@@ -1055,8 +1094,25 @@
 
       if (!isOpen) {
         openDot.classList.add("closed");
-        openNote.style.display = "block";
+        openNote.classList.add("closed");
+        openNote.textContent = "Geschlossen";
+      } else {
+        openNote.textContent = "Geöffnet";
       }
+
+      const highlightText = document.getElementById("highlightText");
+      const highlightItems = [
+        "Öffnungszeiten: Mo–Sa 12:00–22:00",
+        "Holzofen im Gastraum",
+        "Frische Zutaten",
+        "Mitten in der Altstadt",
+      ];
+      let highlightIndex = 0;
+
+      setInterval(() => {
+        highlightIndex = (highlightIndex + 1) % highlightItems.length;
+        highlightText.textContent = highlightItems[highlightIndex];
+      }, 3600);
 
       const galleryTrack = document.getElementById("galleryTrack");
       const galleryDots = Array.from(document.querySelectorAll("#galleryDots .gallery-dot"));
